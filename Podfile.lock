@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.3.1)
+  - GoogleMaps (1.13.0)
+  - OAuthSwift (0.5.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - GoogleMaps
+  - OAuthSwift (~> 0.5.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
+  OAuthSwift: 1ef042d4362e755e24a78f158d817245641a5d24
+
+COCOAPODS: 0.38.2
