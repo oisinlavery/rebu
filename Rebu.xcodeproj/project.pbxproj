@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B3B32AF1CB82D8200156607 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B3B32AE1CB82D8200156607 /* Podfile */; };
+		6B56347F1CC5B07100E396CB /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B56347E1CC5B07100E396CB /* SwiftyJSON.framework */; };
 		6B689ACB1CB769190016B950 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B689ACA1CB769190016B950 /* CoreLocation.framework */; };
 		6B7BDAD61CB748FD0083F6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BDAD51CB748FD0083F6FC /* AppDelegate.swift */; };
 		6B7BDAD81CB748FD0083F6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BDAD71CB748FD0083F6FC /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		4259B8E5A71EA14F02E029AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6B3B32AE1CB82D8200156607 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		6B56347E1CC5B07100E396CB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Rebu-gdpqrnvbyzhnmkfsykkhegwabrwk/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		6B689ACA1CB769190016B950 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6B7BDAD21CB748FD0083F6FC /* Rebu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7BDAD51CB748FD0083F6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B56347F1CC5B07100E396CB /* SwiftyJSON.framework in Frameworks */,
 				6B689ACB1CB769190016B950 /* CoreLocation.framework in Frameworks */,
 				C8A4EBFEAD7DB5DA6CA8852C /* Pods.framework in Frameworks */,
 			);
@@ -89,6 +92,7 @@
 		C4D0915ADFA8E4E2D21C640D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B56347E1CC5B07100E396CB /* SwiftyJSON.framework */,
 				6B689ACA1CB769190016B950 /* CoreLocation.framework */,
 				F5B3E29B79FCF08E881F6B7D /* Pods.framework */,
 			);
