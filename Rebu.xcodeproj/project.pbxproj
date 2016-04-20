@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B3B32AF1CB82D8200156607 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B3B32AE1CB82D8200156607 /* Podfile */; };
 		6B56347F1CC5B07100E396CB /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B56347E1CC5B07100E396CB /* SwiftyJSON.framework */; };
+		6B5634811CC7EFA800E396CB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5634801CC7EFA800E396CB /* AuthViewController.swift */; };
 		6B689ACB1CB769190016B950 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B689ACA1CB769190016B950 /* CoreLocation.framework */; };
 		6B7BDAD61CB748FD0083F6FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BDAD51CB748FD0083F6FC /* AppDelegate.swift */; };
 		6B7BDAD81CB748FD0083F6FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BDAD71CB748FD0083F6FC /* ViewController.swift */; };
@@ -20,8 +21,9 @@
 
 /* Begin PBXFileReference section */
 		4259B8E5A71EA14F02E029AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6B3B32AE1CB82D8200156607 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		6B3B32AE1CB82D8200156607 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6B56347E1CC5B07100E396CB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Rebu-gdpqrnvbyzhnmkfsykkhegwabrwk/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		6B5634801CC7EFA800E396CB /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		6B689ACA1CB769190016B950 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6B7BDAD21CB748FD0083F6FC /* Rebu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7BDAD51CB748FD0083F6FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				6B7BDAD91CB748FD0083F6FC /* Main.storyboard */,
 				6B7BDADC1CB748FD0083F6FC /* Assets.xcassets */,
 				6B7BDADE1CB748FD0083F6FC /* LaunchScreen.storyboard */,
+				6B5634801CC7EFA800E396CB /* AuthViewController.swift */,
 				6B7BDAE11CB748FD0083F6FC /* Info.plist */,
 				6B3B32AE1CB82D8200156607 /* Podfile */,
 			);
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7BDAD81CB748FD0083F6FC /* ViewController.swift in Sources */,
+				6B5634811CC7EFA800E396CB /* AuthViewController.swift in Sources */,
 				6B7BDAD61CB748FD0083F6FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

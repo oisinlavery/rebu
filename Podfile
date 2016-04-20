@@ -5,5 +5,6 @@ use_frameworks!
 pod 'GoogleMaps'
 pod 'SwiftyJSON', '~> 2.3'
 pod "OAuthSwift", "~> 0.5.0"
+pod 'FSOAuth'
 pod 'Alamofire', '~> 3.0'
 pod 'Kingfisher', '~> 2.2'
