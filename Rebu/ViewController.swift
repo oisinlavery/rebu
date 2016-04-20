@@ -15,7 +15,8 @@ import OAuthSwift
 import Kingfisher
 
 class ViewController: UIViewController {
-    
+
+    let apiUrl = "https://sandbox-api.uber.com"
     var oauthswift: OAuth2Swift!
 
     @IBOutlet weak var userNameLabel: UILabel!
@@ -53,7 +54,7 @@ class ViewController: UIViewController {
         
         oauthswift.authorize_url_handler = SafariURLHandler(viewController: self)
         
-        oauthswift.authorizeWithCallbackURL( redirectURL!, scope: "profile", state: state, success: {
+        oauthswift.authorizeWithCallbackURL( redirectURL!, scope: "profile history all_trips", state: state, success: {
             credential, response, parameters in
             
             print("oauth_token:\(credential)")
@@ -63,74 +64,67 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
         })
     }
-    
-    func getMe() {
-        
-        
-        oauthswift.client.get("https://api.uber.com/v1/me",
-          success: {
-            data, response in
-            
+
+
+    @IBAction func historyButtonTapped(sender: UIButton) {
+
+        oauthswift.client.get("\(apiUrl)/v1.2/history", success: { data, response in
+
             let json = JSON(data: data)
             print(json)
-            
-            self.userPhotoImageView.kf_setImageWithURL(NSURL(string: json["picture"].stringValue)!)
-            
-            self.userNameLabel.text = "\(json["first_name"].stringValue) \(json["last_name"].stringValue)"
-            
             }
             , failure: { error in
                 print(error)
-            }
-        )
+        })
     }
-    
-    
-    func getProducts() {
-        
+
+
+    @IBAction func remindersButtonTapped(sender: UIButton) {
+
+        oauthswift.client.get("\(apiUrl)/v1/reminders", success: { data, response in
+
+            let json = JSON(data: data)
+            print(json)
+            }
+            , failure: { error in
+                print(error)
+        })
+    }
+
+
+    @IBAction func productsButtonTapped(sender: UIButton) {
+
         let parameters = [
             "server_token": "36jtHeNaS1go4_uTigIyCP-KM7P6SBrTA6PaNye_",
             "latitude": "37.775818",
             "longitude": "-122.418028",
             ]
-        
-        Alamofire.request(.GET, "https://api.uber.com/v1/products", parameters: parameters).responseJSON { response in
-            
-//            print(response.request)  // original URL request
-//            print(response.response) // URL response
-//            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+
+        Alamofire.request(.GET, "\(apiUrl)/v1/products", parameters: parameters).responseJSON { response in
+
+            if let value = response.result.value {
+                let json = JSON(value)
+                print(json)
             }
         }
     }
-    @IBAction func getProductsButtonTapped(sender: UIButton) {
-        getProducts()
-    }
-    @IBAction func getMeButtonTapped(sender: UIButton) {
-        getMe()
+
+    @IBAction func meButtonTapped(sender: UIButton) {
+
+        oauthswift.client.get("\(apiUrl)/v1/me", success: { data, response in
+
+            let json = JSON(data: data)
+            print(json)
+
+            self.userPhotoImageView.kf_setImageWithURL(NSURL(string: json["picture"].stringValue)!)
+
+            self.userNameLabel.text = "\(json["first_name"].stringValue) \(json["last_name"].stringValue)"
+
+        },
+        failure: { error in
+            print(error)
+        })
     }
 }
-
-
-//let headers = [
-//    "Authorization": "Token \(credential.oauth_token)",
-//    "Content-Type": "application/json"
-//]
-//
-//Alamofire.request(.GET, "https://api.uber.com/v1/me", headers: headers).responseJSON { response in
-//    
-//    print(response.request)  // original URL request
-//    print(response.response) // URL response
-//    print(response.data)     // server data
-//    print(response.result)   // result of response serialization
-//    
-//    if let JSON = response.result.value {
-//        print("JSON: \(JSON)")
-//    }
-//}
-//
 
 
