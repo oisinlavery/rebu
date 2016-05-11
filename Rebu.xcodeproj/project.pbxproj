@@ -15,12 +15,21 @@
 		6B7BDADB1CB748FD0083F6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7BDAD91CB748FD0083F6FC /* Main.storyboard */; };
 		6B7BDADD1CB748FD0083F6FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7BDADC1CB748FD0083F6FC /* Assets.xcassets */; };
 		6B7BDAE01CB748FD0083F6FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7BDADE1CB748FD0083F6FC /* LaunchScreen.storyboard */; };
-		C8A4EBFEAD7DB5DA6CA8852C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B3E29B79FCF08E881F6B7D /* Pods.framework */; };
+		6BBC70511CD807B100588F06 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC704F1CD807B100588F06 /* AuthViewController.swift */; };
+		6BBC70521CD807B100588F06 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC70501CD807B100588F06 /* AuthViewController.xib */; };
+		6BBC70561CD8103E00588F06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC70541CD8103E00588F06 /* MainViewController.swift */; };
+		6BBC70571CD8103E00588F06 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC70551CD8103E00588F06 /* MainViewController.xib */; };
+		6BF782901CD92478009FC1E7 /* UberAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF7828F1CD92478009FC1E7 /* UberAuth.swift */; };
+		6BF782921CDA6107009FC1E7 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF782911CDA6107009FC1E7 /* AuthView.xib */; };
+		6BF782941CDA67CF009FC1E7 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF782931CDA67CF009FC1E7 /* Views.swift */; };
+		6BF782981CDA7A97009FC1E7 /* UberProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF782971CDA7A97009FC1E7 /* UberProvider.swift */; };
+		6BFEF3F71CE2589D0066B7AB /* UberAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFEF3F61CE2589D0066B7AB /* UberAPI.swift */; };
+		9B9FC1414BFD67DE0F3FB804 /* Pods_Rebu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A554BD336C35B0BB8FB5C1C6 /* Pods_Rebu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4259B8E5A71EA14F02E029AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6B3B32AE1CB82D8200156607 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		60891210F18C9CA50E94639A /* Pods-Rebu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rebu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rebu/Pods-Rebu.debug.xcconfig"; sourceTree = "<group>"; };
+		6B3B32AE1CB82D8200156607 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6B56347E1CC5B07100E396CB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Rebu-gdpqrnvbyzhnmkfsykkhegwabrwk/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		6B689ACA1CB769190016B950 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6B7BDAD21CB748FD0083F6FC /* Rebu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,7 +39,17 @@
 		6B7BDADC1CB748FD0083F6FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B7BDADF1CB748FD0083F6FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B7BDAE11CB748FD0083F6FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF8C28FAA8DDFF5C44D95907 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6BBC704F1CD807B100588F06 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		6BBC70501CD807B100588F06 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		6BBC70541CD8103E00588F06 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6BBC70551CD8103E00588F06 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		6BF7828F1CD92478009FC1E7 /* UberAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberAuth.swift; sourceTree = "<group>"; };
+		6BF782911CDA6107009FC1E7 /* AuthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthView.xib; sourceTree = "<group>"; };
+		6BF782931CDA67CF009FC1E7 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		6BF782971CDA7A97009FC1E7 /* UberProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberProvider.swift; sourceTree = "<group>"; };
+		6BFEF3F61CE2589D0066B7AB /* UberAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberAPI.swift; sourceTree = "<group>"; };
+		A4EA1BFEB8218A5818237573 /* Pods-Rebu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rebu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rebu/Pods-Rebu.release.xcconfig"; sourceTree = "<group>"; };
+		A554BD336C35B0BB8FB5C1C6 /* Pods_Rebu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rebu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5B3E29B79FCF08E881F6B7D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,29 +60,20 @@
 			files = (
 				6B56347F1CC5B07100E396CB /* SwiftyJSON.framework in Frameworks */,
 				6B689ACB1CB769190016B950 /* CoreLocation.framework in Frameworks */,
-				C8A4EBFEAD7DB5DA6CA8852C /* Pods.framework in Frameworks */,
+				9B9FC1414BFD67DE0F3FB804 /* Pods_Rebu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A38D3854665D17A8D43CBD0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EF8C28FAA8DDFF5C44D95907 /* Pods.debug.xcconfig */,
-				4259B8E5A71EA14F02E029AC /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6B7BDAC91CB748FD0083F6FC = {
 			isa = PBXGroup;
 			children = (
 				6B7BDAD41CB748FD0083F6FC /* Rebu */,
 				6B7BDAD31CB748FD0083F6FC /* Products */,
-				0A38D3854665D17A8D43CBD0 /* Pods */,
 				C4D0915ADFA8E4E2D21C640D /* Frameworks */,
+				F8C3C3FB929B26ECC4E06E3A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,14 +89,47 @@
 			isa = PBXGroup;
 			children = (
 				6B7BDAD51CB748FD0083F6FC /* AppDelegate.swift */,
-				6B7BDAD71CB748FD0083F6FC /* ViewController.swift */,
-				6B7BDAD91CB748FD0083F6FC /* Main.storyboard */,
+				6BBC70541CD8103E00588F06 /* MainViewController.swift */,
+				6BBC704F1CD807B100588F06 /* AuthViewController.swift */,
+				6BF7828F1CD92478009FC1E7 /* UberAuth.swift */,
+				6BF782971CDA7A97009FC1E7 /* UberProvider.swift */,
+				6BFEF3F61CE2589D0066B7AB /* UberAPI.swift */,
 				6B7BDADC1CB748FD0083F6FC /* Assets.xcassets */,
 				6B7BDADE1CB748FD0083F6FC /* LaunchScreen.storyboard */,
 				6B7BDAE11CB748FD0083F6FC /* Info.plist */,
 				6B3B32AE1CB82D8200156607 /* Podfile */,
+				6BF782961CDA6810009FC1E7 /* Enums */,
+				6BF782951CDA6804009FC1E7 /* Views */,
+				6BBC70531CD8102E00588F06 /* bak */,
 			);
 			path = Rebu;
+			sourceTree = "<group>";
+		};
+		6BBC70531CD8102E00588F06 /* bak */ = {
+			isa = PBXGroup;
+			children = (
+				6B7BDAD71CB748FD0083F6FC /* ViewController.swift */,
+				6B7BDAD91CB748FD0083F6FC /* Main.storyboard */,
+			);
+			name = bak;
+			sourceTree = "<group>";
+		};
+		6BF782951CDA6804009FC1E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6BBC70551CD8103E00588F06 /* MainViewController.xib */,
+				6BBC70501CD807B100588F06 /* AuthViewController.xib */,
+				6BF782911CDA6107009FC1E7 /* AuthView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6BF782961CDA6810009FC1E7 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6BF782931CDA67CF009FC1E7 /* Views.swift */,
+			);
+			name = Enums;
 			sourceTree = "<group>";
 		};
 		C4D0915ADFA8E4E2D21C640D /* Frameworks */ = {
@@ -95,8 +138,18 @@
 				6B56347E1CC5B07100E396CB /* SwiftyJSON.framework */,
 				6B689ACA1CB769190016B950 /* CoreLocation.framework */,
 				F5B3E29B79FCF08E881F6B7D /* Pods.framework */,
+				A554BD336C35B0BB8FB5C1C6 /* Pods_Rebu.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8C3C3FB929B26ECC4E06E3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60891210F18C9CA50E94639A /* Pods-Rebu.debug.xcconfig */,
+				A4EA1BFEB8218A5818237573 /* Pods-Rebu.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,12 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B7BDAE41CB748FD0083F6FC /* Build configuration list for PBXNativeTarget "Rebu" */;
 			buildPhases = (
-				B3E60B67C168F113ACA246CB /* Check Pods Manifest.lock */,
+				BC9CBD11C5530E8A2C041C80 /* 📦 Check Pods Manifest.lock */,
 				6B7BDACE1CB748FD0083F6FC /* Sources */,
 				6B7BDACF1CB748FD0083F6FC /* Frameworks */,
 				6B7BDAD01CB748FD0083F6FC /* Resources */,
-				8ED3BF85829A675066BD4469 /* Embed Pods Frameworks */,
-				BE9878C944A139BCCAB99A32 /* Copy Pods Resources */,
+				F0590AD7B82A6AB0F6F17DE7 /* 📦 Embed Pods Frameworks */,
+				726EEE099FB06B151BA81FE8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +188,11 @@
 					6B7BDAD11CB748FD0083F6FC = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = P574E3QYL3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -162,7 +220,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7BDAE01CB748FD0083F6FC /* LaunchScreen.storyboard in Resources */,
+				6BBC70571CD8103E00588F06 /* MainViewController.xib in Resources */,
 				6B7BDADD1CB748FD0083F6FC /* Assets.xcassets in Resources */,
+				6BF782921CDA6107009FC1E7 /* AuthView.xib in Resources */,
+				6BBC70521CD807B100588F06 /* AuthViewController.xib in Resources */,
 				6B3B32AF1CB82D8200156607 /* Podfile in Resources */,
 				6B7BDADB1CB748FD0083F6FC /* Main.storyboard in Resources */,
 			);
@@ -171,29 +232,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8ED3BF85829A675066BD4469 /* Embed Pods Frameworks */ = {
+		726EEE099FB06B151BA81FE8 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rebu/Pods-Rebu-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3E60B67C168F113ACA246CB /* Check Pods Manifest.lock */ = {
+		BC9CBD11C5530E8A2C041C80 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,19 +262,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BE9878C944A139BCCAB99A32 /* Copy Pods Resources */ = {
+		F0590AD7B82A6AB0F6F17DE7 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rebu/Pods-Rebu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -223,8 +284,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFEF3F71CE2589D0066B7AB /* UberAPI.swift in Sources */,
 				6B7BDAD81CB748FD0083F6FC /* ViewController.swift in Sources */,
+				6BF782901CD92478009FC1E7 /* UberAuth.swift in Sources */,
+				6BF782981CDA7A97009FC1E7 /* UberProvider.swift in Sources */,
+				6BF782941CDA67CF009FC1E7 /* Views.swift in Sources */,
+				6BBC70511CD807B100588F06 /* AuthViewController.swift in Sources */,
 				6B7BDAD61CB748FD0083F6FC /* AppDelegate.swift in Sources */,
+				6BBC70561CD8103E00588F06 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +402,7 @@
 		};
 		6B7BDAE51CB748FD0083F6FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF8C28FAA8DDFF5C44D95907 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 60891210F18C9CA50E94639A /* Pods-Rebu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -351,7 +418,7 @@
 		};
 		6B7BDAE61CB748FD0083F6FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4259B8E5A71EA14F02E029AC /* Pods.release.xcconfig */;
+			baseConfigurationReference = A4EA1BFEB8218A5818237573 /* Pods-Rebu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

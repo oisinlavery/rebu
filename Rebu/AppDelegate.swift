@@ -8,35 +8,37 @@
 
 import UIKit
 import GoogleMaps
-import OAuthSwift
+import p2_OAuth2
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let uberAuth = UberAuth.sharedInstance
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         GMSServices.provideAPIKey("AIzaSyDLoSNeZB1RgJgcHAr7LLywkJWgs6snWxo")
 
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
+        window?.rootViewController = mainViewController
+        window?.makeKeyAndVisible()
+
         return true
     }
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        applicationHandleOpenURL(url)
+
+        if (url.host == "oauth") {
+            do {
+                try uberAuth.oauth2.handleRedirectURL(url)
+            } catch {
+                print("error")
+            }
+        }
+
         return true
     }
-
-    func applicationHandleOpenURL(url: NSURL) {
-        if (url.host == "oauth-callback") {
-            OAuthSwift.handleOpenURL(url)
-        } else {
-            // Google provider is the only one wuth your.bundle.id url schema.
-            OAuthSwift.handleOpenURL(url)
-        }
-    }
-
-
 }
 

@@ -1,22 +1,61 @@
 PODS:
   - Alamofire (3.3.1)
-  - GoogleMaps (1.13.0)
-  - Kingfisher (2.2.2)
-  - OAuthSwift (0.5.2)
+  - AlamofireObjectMapper (3.0.0):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
+  - GoogleMaps (1.13.1)
+  - Kingfisher (2.4.0)
+  - Moya (6.4.0):
+    - Moya/Core (= 6.4.0)
+  - Moya/Core (6.4.0):
+    - Alamofire (~> 3.0)
+    - Result (~> 2.0)
+  - Moya/RxSwift (6.4.0):
+    - Moya/Core
+    - RxSwift (~> 2.0)
+  - ObjectMapper (1.2.0)
+  - p2.OAuth2 (2.2.6):
+    - SwiftKeychain (~> 1.0)
+  - Result (2.0.0)
+  - RxAlamofire (2.2):
+    - RxAlamofire/Core (= 2.2)
+  - RxAlamofire/Core (2.2):
+    - Alamofire (~> 3.1)
+    - RxSwift (~> 2.1)
+  - RxCocoa (2.4):
+    - RxSwift (~> 2.4)
+  - RxSwift (2.4)
+  - SwiftKeychain (1.0.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
+  - Alamofire
+  - AlamofireObjectMapper
   - GoogleMaps
-  - Kingfisher (~> 2.2)
-  - OAuthSwift (~> 0.5.0)
-  - SwiftyJSON (~> 2.3)
+  - Kingfisher
+  - Moya
+  - Moya/RxSwift
+  - p2.OAuth2
+  - RxAlamofire
+  - RxCocoa
+  - RxSwift
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
-  GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
-  Kingfisher: 7e8de5b0cf7b5dc8ec559d193029a0859df93ef1
-  OAuthSwift: 1ef042d4362e755e24a78f158d817245641a5d24
+  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
+  GoogleMaps: 8935220056a6cc8e9ca298b4da4ae530620aa71b
+  Kingfisher: 9171a424ee7f8031f518f649bb850d1eab541247
+  Moya: 4d526954c8afd79820991393d40d7d8af756ceee
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  p2.OAuth2: a89edc5660aca8a5349882ee9008de793bbbbcd0
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
+  RxAlamofire: 250b7846cedbd189d6190e4f83caa01ee1f1eceb
+  RxCocoa: 7d6cd877de99f5640306b3d6cf87f580c1d91b61
+  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
+  SwiftKeychain: fd9ad69f7b3ff7a0c7ba579da508bbaa89a395b2
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 4d55613dffe6a2585541491f6837e8caecc97341
+
+COCOAPODS: 1.0.0.rc.2
