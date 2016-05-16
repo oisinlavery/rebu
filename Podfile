@@ -5,18 +5,13 @@ use_frameworks!
 target "Rebu" do
     pod 'p2.OAuth2'
 
+    pod 'Alamofire'
     pod 'RxAlamofire'
     pod 'AlamofireObjectMapper'
-
-    pod 'Moya'
-    pod 'Moya/RxSwift'
+    pod 'SwiftyJSON'
 
     pod 'RxCocoa'
     pod 'RxSwift'
-
-    pod 'Alamofire'
-
-    pod 'SwiftyJSON'
 
     pod 'GoogleMaps'
     pod 'Kingfisher'

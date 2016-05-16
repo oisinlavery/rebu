@@ -16,10 +16,7 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
 
     @IBAction func authenticateButtonTapped(sender: UIButton) {
 
@@ -27,20 +24,8 @@ class AuthViewController: UIViewController {
 
         uberAuth.rx_auth
         .subscribeNext { oauth2 in
-            print(oauth2.hasUnexpiredAccessToken())
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         .addDisposableTo(disposeBag)
-
-//        uberAuth.oauth2.authorize()
-//        uberAuth.oauth2.onAuthorize = { parameters in
-//            print("Did authorize with parameters: \(parameters)")
-//
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//        }
-    }
-
-    @IBAction func closeButtonTapped(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
 }

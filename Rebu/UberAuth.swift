@@ -10,6 +10,8 @@ import Foundation
 import p2_OAuth2
 import RxSwift
 
+// UBER Authentication overview: https://developer.uber.com/docs/authentication
+
 public class UberAuth {
 
     static let sharedInstance = UberAuth()
@@ -21,16 +23,12 @@ public class UberAuth {
         "client_secret": "f-8lHHJVhTp65ih3_E8R5GbP2ZgoxSdOx_kqPRmi",
         "authorize_uri": "https://login.uber.com/oauth/authorize",
         "token_uri": "https://login.uber.com/oauth/token",
-        "scope": "profile history all_trips request",
+        "scope": "profile ride_widgets history places history_lite request_receipt request all_trips",
         "redirect_uris": ["rebu://oauth"],
         "keychain": true
     ]
 
     var oauth2: OAuth2!
-
-//    var hasToken: Bool {
-//        return oauth2.hasUnexpiredAccessToken()
-//    }
 
     var rx_hasToken: Observable<Bool>!
     var rx_auth: Observable<OAuth2>!
@@ -38,8 +36,7 @@ public class UberAuth {
     private init() {
         oauth2 = OAuth2CodeGrant(settings: settings)
 
-//        Remove tokens for auth testing
-//        oauth2.forgetTokens()
+//        oauth2.forgetTokens() // Remove tokens for auth testing
 
         setupRx()
     }
