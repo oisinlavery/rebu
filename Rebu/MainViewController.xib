@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Rebu" customModuleProvider="target">
             <connections>
                 <outlet property="currentButton" destination="Jho-Jg-eUn" id="4Bh-bV-SDH"/>
+                <outlet property="driverImageView" destination="k0w-Q0-jBQ" id="ofL-k4-1FW"/>
                 <outlet property="fullName" destination="E9D-bk-Dvh" id="72A-yO-5BN"/>
                 <outlet property="mapView" destination="mLk-43-cqt" id="QDs-Xz-cfS"/>
                 <outlet property="photoImageView" destination="FgO-G7-c0G" id="1Os-10-HZZ"/>
@@ -30,10 +31,17 @@
                         <constraint firstAttribute="height" constant="64" id="q3P-6t-2Tu"/>
                     </constraints>
                 </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k0w-Q0-jBQ" userLabel="Driver Image">
+                    <rect key="frame" x="128" y="225" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="SlJ-FG-7p1"/>
+                        <constraint firstAttribute="height" constant="64" id="wFp-sF-bA1"/>
+                    </constraints>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9D-bk-Dvh">
                     <rect key="frame" x="139" y="180" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-YC-ptZ">
@@ -64,11 +72,13 @@
                 <constraint firstItem="E9D-bk-Dvh" firstAttribute="top" secondItem="FgO-G7-c0G" secondAttribute="bottom" constant="16" id="FEK-xl-Gbl"/>
                 <constraint firstItem="E9D-bk-Dvh" firstAttribute="centerX" secondItem="FgO-G7-c0G" secondAttribute="centerX" id="Hiv-2U-cSg"/>
                 <constraint firstItem="FgO-G7-c0G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="L7t-6c-t2z"/>
+                <constraint firstItem="k0w-Q0-jBQ" firstAttribute="top" secondItem="E9D-bk-Dvh" secondAttribute="bottom" constant="24" id="NfL-q2-P0f"/>
                 <constraint firstItem="mLk-43-cqt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PNW-s1-1lo"/>
                 <constraint firstItem="mLk-43-cqt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WH1-bf-RaP"/>
                 <constraint firstAttribute="bottom" secondItem="mLk-43-cqt" secondAttribute="bottom" id="WH6-nd-Cdg"/>
                 <constraint firstItem="FgO-G7-c0G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="bOp-TO-U0S"/>
                 <constraint firstAttribute="bottom" secondItem="X4z-YC-ptZ" secondAttribute="bottom" id="jbd-Fa-gmS"/>
+                <constraint firstItem="k0w-Q0-jBQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="poj-dP-dLO"/>
                 <constraint firstAttribute="trailing" secondItem="mLk-43-cqt" secondAttribute="trailing" id="tPt-5d-Tqg"/>
                 <constraint firstItem="X4z-YC-ptZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wAF-DK-uNB"/>
             </constraints>

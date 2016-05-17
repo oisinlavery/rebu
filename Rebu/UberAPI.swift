@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import RxSwift
 import RxAlamofire
+import SwiftyJSON
 
 enum UberAPIEndpoints {
     case Products
@@ -18,7 +19,9 @@ enum UberAPIEndpoints {
     case TimeEstimates
     case History
     case Me
+    case Request
     case RequestCurrent
+    case RequestEstimate
     case RequestDetails
     case RequestMap
     case RequestReceipt
@@ -40,12 +43,7 @@ class UberAPI {
 
     init() {}
 
-    func rx_request(endpoint: UberAPIEndpoints, method: Alamofire.Method = .GET, id: String = "", parameters: [String : NSObject] = [:]) -> Observable<AnyObject> {
-
-        let headers = [
-            "Authorization": "Bearer \(UberAuth.sharedInstance.oauth2.accessToken!)",
-            "Content-Type": "application/json"
-        ]
+    func rx_request(endpoint: UberAPIEndpoints, method: Alamofire.Method = .GET, id: String = "", parameters: [String : String] = [:]) -> Observable<JSON> {
 
         var path: String!
 
@@ -62,8 +60,12 @@ class UberAPI {
             path = "/v1.2/history"
         case .Me:
             path = "/v1/me"
+        case .Request:
+            path = id == "" ? "/v1/requests" : "/v1/sandbox/requests/\(id)"
         case .RequestCurrent:
             path = "/v1/requests/current"
+        case .RequestEstimate:
+            path = "/v1/requests/estimate"
         case .RequestDetails:
             path = "/v1/requests/\(id)"
         case .RequestMap:
@@ -77,41 +79,49 @@ class UberAPI {
         }
 
         let urlString = baseUrlString + path
-
-        let request = Alamofire
-            .request(method, urlString, parameters: parameters, headers: headers)
-//            .responseJSON { response in
-//                print(response)
-//            }
-            .rx_JSON()
-
-//        debugPrint(request)
-
-        return request
-    }
-
-    func rx_post(requestId: String) -> Observable<AnyObject> {
-
-//        let path = "/v1/requests"
-        let path = "/v1/sandbox/requests/\(requestId)"
-        let urlString = baseUrlString + path
         let headers = [
             "Authorization": "Bearer \(UberAuth.sharedInstance.oauth2.accessToken!)",
             "Content-Type": "application/json"
         ]
 
-//        let parameters = ["start_place_id": "home"]
-        let parameters = ["status": "accepted"]
+        let encoding: ParameterEncoding = method == .GET ? .URL : .JSON
 
-        let request = Alamofire
-            .request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: headers)
+        return Observable.create { observer in
+
+            let request = Alamofire.request(
+                method, urlString,
+                parameters: parameters,
+                encoding: encoding,
+                headers: headers
+            )
             .responseJSON { response in
-                print(response)
+                switch response.result {
+                case .Success:
+                    print("Validation Successful")
+
+                    print(response)
+                    let json = JSON(response.result.value!)
+
+                    observer.on(.Next(json))
+                    observer.on(.Completed)
+
+                case .Failure(let error):
+                    observer.on(.Error(error))
+                }
             }
-            .rx_JSON()
 
-        debugPrint(request)
-
-        return request
+            return AnonymousDisposable {
+                request.cancel()
+            }
+        }
+//
+//        let request = Alamofire
+//            .request(method, urlString, parameters: parameters, encoding: (method == .GET ? .URL : .JSON), headers: headers)
+//            .responseJSON { response in
+//                print(response)
+//            }
+//            .rx_JSON()
+//
+//        return request
     }
 }

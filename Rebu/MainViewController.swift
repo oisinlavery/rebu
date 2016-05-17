@@ -24,10 +24,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
 
     let disposeBag = DisposeBag()
-    var meObservable_: Observable<AnyObject>!
 
     @IBOutlet var mapView: GMSMapView!
 
+    @IBOutlet var driverImageView: UIImageView!
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var fullName: UILabel!
 
@@ -64,6 +64,65 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
 
     func setupObservables() {
 
+//        uberAPI.rx_request(.Request, method: .POST, parameters: ["start_place_id": "work"])
+
+        self.uberAPI.rx_request(.RequestCurrent)
+        .map {
+            return $0["request_id"].stringValue
+        }
+        .flatMap { requestId -> Observable<JSON> in
+
+//            let requestId = JSON(request)["request_id"].stringValue
+
+            return self.uberAPI.rx_request(.Request, method: .PUT, id: requestId, parameters: ["status": "arriving"])
+        }
+        .flatMap {_ in
+            return self.uberAPI.rx_request(.RequestCurrent)
+        }
+        .subscribeNext{ current in
+
+            self.driverImageView.layer.cornerRadius = 32
+            self.driverImageView.clipsToBounds = true
+            self.driverImageView.kf_setImageWithURL(NSURL(string: current["driver"]["picture"].stringValue)!)
+
+
+        }
+        .addDisposableTo(disposeBag)
+
+//        uberAPI.rx_request(.Request, method: .POST, parameters: ["start_place_id": "work"])
+//        .subscribeNext { (request) in
+//
+//            let json = JSON(request)
+//            print(json)
+//
+//            self.uberAPI.rx_request(.Request, method: .PUT, id: json["request_id"].stringValue, parameters: ["status": "arriving"])
+//            .subscribeNext { (request) in
+//                print(request)
+//
+//
+//                self.uberAPI.rx_request(.RequestCurrent)
+//                .subscribeNext { request in
+//                    print("Current Status")
+//                    print(request)
+//
+//                    let json = JSON(request)
+//
+//                    self.driverImageView.layer.cornerRadius = 32
+//                    self.driverImageView.clipsToBounds = true
+//                    self.driverImageView.kf_setImageWithURL(NSURL(string: json["driver"]["picture_url"].stringValue)!)
+//
+//                }
+//                .addDisposableTo(self.disposeBag)
+//            }
+//            .addDisposableTo(self.disposeBag)
+//        }
+//        .addDisposableTo(disposeBag)
+
+//        uberAPI.rx_post("")
+//        .subscribeNext { (request) in
+//            print(request)
+//        }
+
 //        let requestButtonTaps_ = requestButton.rx_tap
 //        let currentButtonTaps_ = currentButton.rx_tap
 //
@@ -81,8 +140,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
 //        .addDisposableTo(disposeBag)
 
 
-        meObservable_ = uberAPI.rx_request(.Me)
-
 //        let observable = uberAPI.rx_get(.Places(placeId: "home"))
 //        let observable = uberAPI.rx_get(
 //            .Products(
@@ -93,28 +150,28 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
 
 //        let observable = uberAPI.rx_post("15eaca99-a290-43f1-ad90-237d55434918")
 
-        func getCurrentRequestId() -> Observable<String> {
-
-            return uberAPI.rx_request(.RequestCurrent)
-            .map { result in
-
-                let json = JSON(result)
-                let requestId = json["request_id"].stringValue
-                print(requestId)
-
-                return requestId
-            }
-        }
-
-        func postRequest(requestId: Observable<String>){
-            requestId.map { requestId in
-                self.uberAPI.rx_post(requestId)
-            }
-            .subscribe { event in
-                print(event)
-            }
-            .addDisposableTo(disposeBag)
-        }
+//        func getCurrentRequestId() -> Observable<String> {
+//
+//            return uberAPI.rx_request(.RequestCurrent)
+//            .map { result in
+//
+//                let json = JSON(result)
+//                let requestId = json["request_id"].stringValue
+//                print(requestId)
+//
+//                return requestId
+//            }
+//        }
+//
+//        func postRequest(requestId: Observable<String>){
+//            requestId.map { requestId in
+//                self.uberAPI.rx_post(requestId)
+//            }
+//            .subscribe { event in
+//                print(event)
+//            }
+//            .addDisposableTo(disposeBag)
+//        }
 
 //        getCurrentRequestId()
 //        .map {
@@ -133,18 +190,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         photoImageView.layer.cornerRadius = 32
         photoImageView.clipsToBounds = true
 
-        meObservable_
-//            .subscribe { event in
-//                print(event.error != nil)
-//            }
-//        .map {
-//            return $0["picture"] as! String
-//        }
-        .subscribeNext { (meDetails) in
-            print(meDetails)
-            self.fullName.text = "\(meDetails["first_name"]!) \(meDetails["last_name"]!)"
-//            self.fullName.sizeToFit()
-            self.photoImageView.kf_setImageWithURL(NSURL(string: meDetails["picture"] as! String)!)
+        uberAPI.rx_request(.Me)
+        .subscribeNext { me in
+            print(me)
+            self.fullName.text = "\(me["first_name"]) \(me["last_name"])"
+            self.photoImageView.kf_setImageWithURL(NSURL(string: me["picture"].stringValue)!)
+
         }
         .addDisposableTo(disposeBag)
     }
